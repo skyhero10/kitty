@@ -1,2 +1,1 @@
-mb_sinatra
-==========
+# A Basic Web App
