@@ -19,7 +19,7 @@ get '/users' do
   users = read_users_from_file('users.csv')
   users.each do |user|
     output += "<li>\n"
-    output += "<a href='mailto:#{user[:email]}'>#{user[:first_name]} #{user[:last_name]}</a>\n"
+    output += "<a href='/users/#{user[:id]}'>#{user[:first_name]} #{user[:last_name]}</a>\n"
     output += "</li>\n"
   end
   output += "</pre>"
@@ -28,4 +28,13 @@ get '/users' do
 end
 
 get '/users/:id' do
+  users = read_users_from_file('users.csv')
+
+  user = users.find { |user| user[:id] == params[:id] }
+
+  if user == nil
+    "User #{params[:id]} does not exist"
+  else
+    "Here's some info for #{user[:first_name]} #{user[:last_name]}"
+  end
 end
