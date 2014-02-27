@@ -8,7 +8,7 @@ gem 'sinatra-contrib'
 gem 'thin'
 
 gem 'activesupport'
-gem 'activerecord'
+gem 'sequel'
 
 gem 'rake'
 

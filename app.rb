@@ -1,40 +1,20 @@
 # Note: the name of this file (app.rb) is irrelevant.
 
-require 'sinatra'
-require 'sinatra/reloader'
-require 'csv'
+# Require config/environment.rb
+require ::File.expand_path('../config/environment',  __FILE__)
 
-# Don't worry about this method for now
-def read_users_from_file(filename)
-  CSV.read(filename, :headers => true, :header_converters => :symbol).map { |row| row.to_hash }
-end
+set :app_file, __FILE__
 
 get '/' do
-  "Hello, world!"
+  posts = Post.reverse_order(:created_at).all
+  erb :index, :locals => {:posts => posts}
 end
 
-get '/users' do
-  output = "<ol>\n"
-
-  users = read_users_from_file('users.csv')
-  users.each do |user|
-    output += "<li>\n"
-    output += "<a href='/users/#{user[:id]}'>#{user[:first_name]} #{user[:last_name]}</a>\n"
-    output += "</li>\n"
-  end
-  output += "</pre>"
-
-  output
+post '/posts' do
+  Post.create(:body => params[:body])
+  redirect to('/')
 end
 
-get '/users/:id' do
-  users = read_users_from_file('users.csv')
-
-  user = users.find { |user| user[:id] == params[:id] }
-
-  if user == nil
-    "User #{params[:id]} does not exist"
-  else
-    "Here's some info for #{user[:first_name]} #{user[:last_name]}"
-  end
+get '/todo' do
+  erb :todo
 end
