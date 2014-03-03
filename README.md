@@ -48,7 +48,7 @@ where `your-actual-github-username` is *your* personal GitHub username.
 
 Once you have the clone URL, open the Terminal on your desktop and run the `git clone` command:
 
-```shell
+```bash
 git clone https://github.com/your-actual-github-username/superwall.git
 ```
 
@@ -69,19 +69,23 @@ If everything worked, it should look something like this:
 We're ready to go!  To start, run the following commands one at a time:
 
 1.  Change into the `superwall` directory
-    ```shell
+
+    ```bash
     cd superwall 
     ```
 1.  Install the `bundle` gem, a Ruby library for managing larger applications
-    ```shell
+
+    ```bash
     sudo gem install bundle
     ```
 1.  Use bundle to install the libraries that `superwall` needs
-    ```shell
+
+    ```bash
     sudo bundle install
     ```
 1.  Run the application!
-    ```shell
+
+    ```bash
     ruby app.rb
     ```
 
