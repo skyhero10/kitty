@@ -8,6 +8,17 @@ This is what it looks like once running:
   <img src="http://f.cl.ly/items/0X0V2S2t0K0t1p2C1G39/superwall_home.png">
 </p>
 
+## Contents
+
+1. [Getting Started](#getting-started)
+    1. [Fork the repository](#fork-the-repository)
+    1. [Get the clone URL](#get-the-clone-url)
+    1. [Clone the repository](#clone-the-repository)
+    1. [Start the web application!](#start-the-web-application)
+    1. [Using superwall](#using-superwall)
+1. [Editing the application](#editing-the-application)
+1. [Saving your changes to superwall](#saving-your-changes-to-superwall)
+
 ## Getting Started
 
 We're going to work on superwall using GitHub like a professional programmer would.
@@ -119,3 +130,23 @@ You can now display the image on your website using the `<img>` tag, like so
 ```
 
 The forward slash `/` before the image name is important, here.
+
+## Saving your changes to superwall
+
+Coming soon!  The **tl;dr** version is to run these three commands from inside your `superwall` directory:
+
+1. Tell git we want to commit every change we've made — the `.` means "the current directory"
+
+   ```bash
+   git add .
+   ```
+1. Commit your changes with a commit message — the `-m` means "message" and the bit between the quotes is the (required) commit message
+
+   ```bash
+   git commit -m "Saving my changes to superwall"
+   ```
+1. Push your changes to GitHub — you might be prompted for your username and password again
+
+   ```bash
+   git push
+   ```
