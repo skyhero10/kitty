@@ -1,5 +1,9 @@
 <h2>Hi</h2>
-
+ <style>
+  p,li {
+    color: #ffffff;
+  }
+ </Style>
 <div id="post-form">
   <form action="/posts"  method="post">
     <div>
@@ -10,7 +14,7 @@
     </div>
   </form>
 </div>
-<ol class="post-list">
+<ol class="post-list" >
   <% posts.each do |post| %>
     <li>
       <!-- Read http://www.ruby-doc.org/core-2.1.1/Time.html#method-i-strftime 
