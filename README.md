@@ -87,7 +87,7 @@ We're ready to go!  To start, run the following commands one at a time:
 1.  Install the `bundle` gem, a Ruby library for managing larger applications
 
     ```bash
-    sudo gem install bundle
+    sudo gem install bundler
     ```
 1.  Use bundle to install the libraries that `superwall` needs
 
